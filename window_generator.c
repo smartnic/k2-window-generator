@@ -135,9 +135,11 @@ int main(int argc, char *argv[])
             line[len - 1] = '\0';
         }
 
-        int code, src_reg, dst_reg, off, imm;
+        unsigned char code, src_reg, dst_reg;
+        signed short off;
+        signed int imm;
         
-        if (sscanf(line, "{%d %d %d %d %d}", &code, &src_reg, &dst_reg, &off, &imm) != 5) {
+        if (sscanf(line, "{%hhu %hhu %hhu %hd %d}", &code, &src_reg, &dst_reg, &off, &imm) != 5) {
             fprintf(stderr, "INVALID INSTRUCTION FORMAT: \"%s\"\n", line);
             if (num_insns > 0) {
                 cost_map[num_insns] = cost_map[num_insns-1];
