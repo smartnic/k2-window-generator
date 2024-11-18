@@ -156,13 +156,15 @@ int main(int argc, char *argv[])
             int jmp_dst;
 
             // Positive offset
-            if (off >= 0) {
-                jmp_dst = jmp_src + off + 1;
-            // Negative offset
-            // TODO: ensure these are handled well
-            } else {
-                jmp_dst = jmp_src + off;
-            }
+            //if (off >= 0) {
+            //    jmp_dst = jmp_src + off + 1;
+            //// Negative offset
+            //// TODO: ensure these are handled well
+            //} else {
+            //    jmp_dst = jmp_src + off;
+            //}
+
+            jmp_dst = jmp_src + off + 1;
 
             bitmap_set(bitmap, jmp_src); // JMP_SRC
             bitmap_set(bitmap, jmp_dst); // JMP_DST
