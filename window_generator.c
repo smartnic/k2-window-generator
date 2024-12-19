@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define DEBUG
+//#define DEBUG
 
 #define INSN_CLASS_MASK 0x07
 
@@ -293,7 +293,7 @@ int main(int argc, char *argv[])
     start_window_buf[0] = '\0';
     end_window_buf[0] = '\0'; 
     int i = 0;
-    FILE *output = fopen("output.txt", "w");
+    //FILE *output = fopen("output.txt", "w");
     while (i < num_windows) {
         int l=temp->l;
         int r=temp->r;
@@ -309,10 +309,11 @@ int main(int argc, char *argv[])
         temp = temp->next;
         ++i;
     }
-    fprintf(output, "--win_s_list %s --win_e_list %s", start_window_buf, end_window_buf);
+    //fprintf(output, "--win_s_list %s --win_e_list %s", start_window_buf, end_window_buf);
+    printf("--win_s_list %s --win_e_list %s", start_window_buf, end_window_buf);
     free(start_window_buf);
     free(end_window_buf);
-    fclose(output);
+    //fclose(output);
     // free linked list at the very end
     while (head != NULL) {
         #ifdef DEBUG
