@@ -21,3 +21,4 @@ Rather than inspecting an eBPF program as a whole (which K2 can certainly do), i
 - if DEBUG is defined in the source code, each window (with its corresponding heuristic cost) is also printed to standard output.
 - if the program finds no windows, it early exits with a failed return code.
 - more specifically, insns.txt is the ASCII representation of a program's instructions obtained when an object file is fed into one of {bpf-elf-tools/text-extractor, ebpf-extractor}. 
+- this tool is utilized by [k2-benchmarking](https://github.com/smartnic/k2-benchmarking) to automatically generate windows.
