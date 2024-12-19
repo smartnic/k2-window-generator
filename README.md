@@ -12,7 +12,7 @@ Lastly, each window is measured by a heuristic which is currently the number of 
 
 ### Outputs
 1) a debug.txt file if DEBUG is defined in the source code -- this outputs the instruction bitmap, where 1 denotes a JMP_{SRC/DST} and 0 does not.
-2) the K2-formatted arguments containing the calculated windows (e.g. --win_s_list 0,1 --win_e_list 2,3) **printed to standard output**.\
+2) the K2-formatted arguments containing the calculated windows (e.g. --win_s_list 0,1 --win_e_list 2,3) **printed to standard output**.
 
 #### Background
 Rather than inspecting an eBPF program as a whole (which K2 can certainly do), it is preferred for K2 to look at and try to optimize smaller portions of interest. Previously, these windows were obtained by hand, but this program makes it simple to generate automatically several windows that can be directly fed into K2. This way, there is no chance to generate problematic windows (for example, a window containing a JMP_SRC that references a JMP_DST outside the window).
